@@ -5,7 +5,7 @@ namespace DOOP
     class Program
     {
         static void Main(string[] args)
-        {
+        {  //3. zadatak
             Note note1 = new Note();
             note1.SetText("Zabiljeska1");
             Note note2 = new Note("Ivan Markovic");
@@ -15,14 +15,27 @@ namespace DOOP
             Console.WriteLine(note2.ToString());
             Console.WriteLine(note3.ToString());
 
-            NoteWithDate note4 = new NoteWithDate("Note4", "Marijan", 1);
-            NoteWithDate note5 = new NoteWithDate("Note5", "Marko", 0);
+            // 7. zadatak
             ToDoList Lista = new ToDoList();
-            Lista.AddTask(note1);
-            Lista.AddTask(note2);
-            Lista.AddTask(note3);
-            Lista.AddTask(note4);
-            Lista.AddTask(note5);
+            for (int i=0;i<4;i++)
+            {
+                Console.WriteLine("Unesite tekst zabiljeske: ");
+                string text = Console.ReadLine();
+                Console.WriteLine("Unesite autora zabiljeske: ");
+                string author = Console.ReadLine();
+                Console.WriteLine("Unesite vaznost zabiljeske [0,1,2]: ");
+                int importance;
+                do
+                {
+                    importance = Convert.ToInt32(Console.ReadLine());
+
+                } while (importance>2||importance<0);
+
+                Lista.AddTask(new NoteWithDate(text, author, importance));
+            }
+            
+
+
             foreach (Note note in Lista.GetToDoList())
             {
                 Console.WriteLine(note.ToString());

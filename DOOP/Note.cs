@@ -4,11 +4,11 @@ using System.Text;
 
 namespace DOOP
 {
-    enum Importance
+    public enum Importance
     {
         Low, Medium, High
     }
-    class Note
+   public class Note
     {
         private string Text;
         private string Author;
