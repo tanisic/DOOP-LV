@@ -17,29 +17,34 @@ namespace DOOP
 
             // 7. zadatak
             ToDoList Lista = new ToDoList();
-            for (int i=0;i<4;i++)
-            {
+
+            for (int i=0;i<3;i++){
                 Console.WriteLine("Unesite tekst zabiljeske: ");
                 string text = Console.ReadLine();
                 Console.WriteLine("Unesite autora zabiljeske: ");
                 string author = Console.ReadLine();
                 Console.WriteLine("Unesite vaznost zabiljeske [0,1,2]: ");
                 int importance;
-                do
-                {
+                do{
                     importance = Convert.ToInt32(Console.ReadLine());
-
                 } while (importance>2||importance<0);
 
                 Lista.AddTask(new NoteWithDate(text, author, importance));
             }
             
+            foreach (Note note in Lista.GetToDoList()){
+                Console.WriteLine(note.ToString());
+            }
 
+            Lista.FinishHighPriorityTasks();
 
+            Console.WriteLine("Lista nakon izvršavanja: \n");
             foreach (Note note in Lista.GetToDoList())
             {
                 Console.WriteLine(note.ToString());
             }
+
+
         }
     }
 }

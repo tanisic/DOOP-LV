@@ -12,6 +12,8 @@ namespace DOOP
             List.Add(note);
         }
 
+        
+
         public void FinishTask(Note note)
         {
 
@@ -34,6 +36,17 @@ namespace DOOP
         public List<Note> GetToDoList()
         {
          return List;
+        }
+
+        public void FinishHighPriorityTasks()
+        {
+            for(int i=0;i<List.Count;i++)
+            {
+                if (GetTask(i).GetImportance() == Importance.High)
+                {
+                    FinishTask(GetTask(i));
+                }
+            }
         }
     }
 }

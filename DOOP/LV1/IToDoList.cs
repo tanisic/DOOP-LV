@@ -10,5 +10,6 @@ namespace DOOP
         public void FinishTask(Note note);
         public List<Note> GetToDoList();
         public Note GetTask(int index);
+        public void FinishHighPriorityTasks();
     }
 }
