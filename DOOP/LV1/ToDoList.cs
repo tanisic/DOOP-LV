@@ -16,21 +16,12 @@ namespace DOOP
 
         public void FinishTask(Note note)
         {
-
-            if (List.Contains(note))
-            {
-                List.RemoveAt(List.IndexOf(note));
-            }
-
+            List.RemoveAt(List.IndexOf(note));    
         }
 
         public Note GetTask(int index)
-        {
-        if (List.Count < index || index < 0)
-        {
-        return null;
-        }
-        return List.ElementAt(index);
+        { 
+            return List.ElementAt(index);
         }
 
         public List<Note> GetToDoList()
@@ -42,9 +33,10 @@ namespace DOOP
         {
             for(int i=0;i<List.Count;i++)
             {
-                if (GetTask(i).GetImportance() == Importance.High)
+                if (GetTask(i).GetImportance() == (Importance)2)
                 {
                     FinishTask(GetTask(i));
+                    i--;
                 }
             }
         }

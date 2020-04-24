@@ -18,7 +18,7 @@ namespace DOOP
             // 7. zadatak
             ToDoList Lista = new ToDoList();
 
-            for (int i=0;i<3;i++){
+            for (int i=0;i<4;i++){
                 Console.WriteLine("Unesite tekst zabiljeske: ");
                 string text = Console.ReadLine();
                 Console.WriteLine("Unesite autora zabiljeske: ");
