@@ -5,13 +5,23 @@ using System.Text;
 namespace LV2
 {
     class DiceRoller
-    {
+    {       //zadatak 4.
         private List<Die> dice;
         private List<int> resultForEachRoll;
-        public DiceRoller()
+        private ILogger logger;
+        public DiceRoller(ILogger logger)
         {
             this.dice = new List<Die>();
             this.resultForEachRoll = new List<int>();
+            this.logger = logger;
+        }
+        public void LogRollingResults()
+        {
+            
+            foreach (int result in this.resultForEachRoll)
+            {
+                logger.Log(result.ToString());
+            }
         }
         public void InsertDie(Die die)
         {
@@ -37,12 +47,6 @@ namespace LV2
         {
             get { return dice.Count; }
         }
-        public void PrintRollingResults()
-        {
-            foreach (int number in GetRollingResults())
-            {
-                Console.WriteLine(number);
-            }
-        }
+       
     }
 }
