@@ -37,5 +37,12 @@ namespace LV2
         {
             get { return dice.Count; }
         }
+        public void PrintRollingResults()
+        {
+            foreach (int number in GetRollingResults())
+            {
+                Console.WriteLine(number);
+            }
+        }
     }
 }
