@@ -4,25 +4,17 @@ using System.Text;
 
 namespace LV2
 {
-    class DiceRoller
-    {       //zadatak 4.
+    class DiceRoller:ILogable
+    {       //zadatak 5.
         private List<Die> dice;
         private List<int> resultForEachRoll;
-        private ILogger logger;
-        public DiceRoller(ILogger logger)
+        
+        public DiceRoller()
         {
             this.dice = new List<Die>();
-            this.resultForEachRoll = new List<int>();
-            this.logger = logger;
+            this.resultForEachRoll = new List<int>();         
         }
-        public void LogRollingResults()
-        {
-            
-            foreach (int result in this.resultForEachRoll)
-            {
-                logger.Log(result.ToString());
-            }
-        }
+        
         public void InsertDie(Die die)
         {
             dice.Add(die);
@@ -43,6 +35,16 @@ namespace LV2
            this.resultForEachRoll
            );
         }
+
+        public string GetStringRepresentation()
+        { StringBuilder stringBuilder = new StringBuilder();
+            foreach(int number in resultForEachRoll)
+            {
+                stringBuilder.AppendFormat("{0} ",number);
+            }
+            return stringBuilder.ToString();  
+        }
+
         public int DiceCount
         {
             get { return dice.Count; }
