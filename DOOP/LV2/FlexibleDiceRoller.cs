@@ -31,5 +31,16 @@ namespace LV2
                 this.resultForEachRoll.Add(die.Roll());
             }
         }
+        //7. zadatak
+        public void RemoveAllDiceWithNumberOfSides(int numberOfSides)
+        {
+            for(int i=dice.Count-1;i>=0;i--)
+            {
+                if(dice[i].GetNumberOfSides()==numberOfSides)
+                {
+                    dice.RemoveAt(i);
+                }
+            }
+        }
     }
 }

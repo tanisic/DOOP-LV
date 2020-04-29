@@ -18,5 +18,9 @@ namespace LV2
            int rolledNumber = randomGenerator.NextInt(1, numberOfSides + 1);
             return rolledNumber;
         }
+        public int GetNumberOfSides()
+        {
+            return this.numberOfSides;
+        }
     }
 }

@@ -15,6 +15,6 @@ namespace LV2
             }
             diceRoller.RollAllDice();
             logger.Log(diceRoller);
-        }//7. zadatak: sučelje iz primjera sam razlomio na 2 sučelja IClosedDiceeRoller i ICompleteDiceRoller
+        }//6. zadatak: sučelje iz primjera sam razlomio na 2 sučelja IClosedDiceeRoller i ICompleteDiceRoller
     }
 }
