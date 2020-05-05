@@ -5,13 +5,18 @@ using System.Globalization;
 namespace LV3
 {
     class Program
-    {   //4. zadatak
+    {   //5. zadatak
         static void Main(string[] args)
         {
-            ConsoleNotification notification = new ConsoleNotification("Ivan", "Naslov", "Nekakav tekst",
-                DateTime.Now, Category.ALERT, ConsoleColor.Green);
-            NotificationManager notificationManager = new NotificationManager();
-            notificationManager.Display(notification);
+            NotificationBuilder notification = new NotificationBuilder();
+            NotificationManager manager = new NotificationManager();
+            notification.SetAuthor("Autor");
+            notification.SetColor(ConsoleColor.Yellow);
+            notification.SetLevel(Category.ERROR);
+            notification.SetText("Neki text");
+            notification.SetTitle("Naslov");
+            notification.SetTime(DateTime.Now);
+            manager.Display(notification.Build());
         }
     }
 }
