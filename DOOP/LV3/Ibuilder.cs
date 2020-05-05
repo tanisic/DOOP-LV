@@ -4,14 +4,14 @@ using System.Text;
 
 namespace LV3
 {
-    interface Ibuilder
+    interface IBuilder
     {
         ConsoleNotification Build();
-        Ibuilder SetAuthor(String author);
-        Ibuilder SetTitle(String title);
-        Ibuilder SetTime(DateTime time);
-        Ibuilder SetLevel(Category level);
-        Ibuilder SetColor(ConsoleColor color);
-        Ibuilder SetText(String text);
+        IBuilder SetAuthor(String author);
+        IBuilder SetTitle(String title);
+        IBuilder SetTime(DateTime time);
+        IBuilder SetLevel(Category level);
+        IBuilder SetColor(ConsoleColor color);
+        IBuilder SetText(String text);
     }
 }

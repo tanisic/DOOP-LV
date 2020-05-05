@@ -5,18 +5,18 @@ using System.Globalization;
 namespace LV3
 {
     class Program
-    {   //5. zadatak
+    {   //6. zadatak
         static void Main(string[] args)
         {
-            NotificationBuilder notification = new NotificationBuilder();
+            NotificationBuilder builder = new NotificationBuilder();
+            Direktor direktor = new Direktor();
             NotificationManager manager = new NotificationManager();
-            notification.SetAuthor("Autor");
-            notification.SetColor(ConsoleColor.Yellow);
-            notification.SetLevel(Category.ERROR);
-            notification.SetText("Neki text");
-            notification.SetTitle("Naslov");
-            notification.SetTime(DateTime.Now);
-            manager.Display(notification.Build());
+            direktor.ConstructConsoleNotificationALERT(builder, "Ante");
+            manager.Display(builder.Build());
+            direktor.ConstructConsoleNotificationINFO(builder, "Ivan");
+            manager.Display(builder.Build());
+            direktor.ConstructConsoleNotificationERROR(builder, "Marin");
+            manager.Display(builder.Build());
         }
     }
 }

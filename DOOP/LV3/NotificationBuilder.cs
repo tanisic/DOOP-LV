@@ -4,7 +4,7 @@ using System.Text;
 
 namespace LV3
 {
-    class NotificationBuilder : Ibuilder
+    class NotificationBuilder : IBuilder
     {
         private string Author;
         private string Title;
@@ -18,32 +18,32 @@ namespace LV3
             return new ConsoleNotification(Author, Title, Text, Timestamp, Level, Color);
         }
 
-        public Ibuilder SetAuthor(string author)
+        public IBuilder SetAuthor(string author)
         {
             this.Author = author; return this;
         }
 
-        public Ibuilder SetColor(ConsoleColor color)
+        public IBuilder SetColor(ConsoleColor color)
         {
             this.Color = color; return this;
         }
 
-        public Ibuilder SetLevel(Category level)
+        public IBuilder SetLevel(Category level)
         {
             this.Level = level; return this;
         }
 
-        public Ibuilder SetText(string text)
+        public IBuilder SetText(string text)
         {
             this.Text = text; return this;
         }
 
-        public Ibuilder SetTime(DateTime time)
+        public IBuilder SetTime(DateTime time)
         {
             this.Timestamp = time; return this;
         }
 
-        public Ibuilder SetTitle(string title)
+        public IBuilder SetTitle(string title)
         {
             this.Title = title; return this;
         }
