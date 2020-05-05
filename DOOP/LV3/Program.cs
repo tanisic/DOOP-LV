@@ -5,12 +5,13 @@ using System.Globalization;
 namespace LV3
 {
     class Program
-    {   //3. zadatak
+    {   //4. zadatak
         static void Main(string[] args)
         {
-            Logger logger = Logger.GetInstance(@"C:\Users\tin_k\Documents\DOOP-LV\DOOP\LV3\LoggerOutput.txt");
-            string message = "Poruka za log file.";
-            logger.Log(message);
+            ConsoleNotification notification = new ConsoleNotification("Ivan", "Naslov", "Nekakav tekst",
+                DateTime.Now, Category.ALERT, ConsoleColor.Green);
+            NotificationManager notificationManager = new NotificationManager();
+            notificationManager.Display(notification);
         }
     }
 }
