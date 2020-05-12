@@ -7,21 +7,15 @@ namespace LV4
     {
         static void Main(string[] args)
         {
-            //6. zadatak
-            string[] passwords = { "adE2f2", "aE2f5", "fg2ghh31" };
-            string[] emails = { "test1@etfos.hr", "test@ferit.tk", "test2@etfos.com" };
-            PasswordValidator passwordValidator = new PasswordValidator(6);
-            EmailValidator emailValidator = new EmailValidator();
-            Console.WriteLine("Passwords: ");
-            foreach(string password in passwords)
-            {
-                Console.WriteLine(passwordValidator.IsValidPassword(password));
-            }
-            Console.WriteLine("E-mails: ");
-            foreach (string email in emails)
-            {
-                Console.WriteLine(emailValidator.IsValidAddress(email));
-            }
+            //7. zadatak
+            UserValidator validator = new UserValidator();
+            while (true) { 
+            if(validator.IsUserEntryValid(UserEntry.ReadUserFromConsole()))
+                {
+                    Console.WriteLine("Login Successful!");
+                    break;
+                }
+            }  
         }
     }
 }
