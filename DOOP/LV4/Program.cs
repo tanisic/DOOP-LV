@@ -11,6 +11,8 @@ namespace LV4
             List<IRentable> rentables = new List<IRentable>();
             rentables.Add(new Book("Knjiga"));
             rentables.Add(new Video("Kazeta"));
+            rentables.Add(new HotItem(new Video("HotFilm")));
+            rentables.Add(new HotItem(new Book("HotBook")));
             RentingConsolePrinter printer = new RentingConsolePrinter();
             printer.DisplayItems(rentables);
             printer.PrintTotalPrice(rentables);
