@@ -7,20 +7,21 @@ namespace LV4
     {
         static void Main(string[] args)
         {
-            //5. zadatak
-            List<IRentable> rentables = new List<IRentable>();
-            rentables.Add(new Book("Knjiga"));
-            rentables.Add(new Video("Kazeta"));
-            rentables.Add(new HotItem(new Video("HotFilm")));
-            rentables.Add(new HotItem(new Book("HotBook")));
-            List<IRentable> flashSale = new List<IRentable>();
-            foreach(IRentable rentable in rentables)
+            //6. zadatak
+            string[] passwords = { "adE2f2", "aE2f5", "fg2ghh31" };
+            string[] emails = { "test1@etfos.hr", "test@ferit.tk", "test2@etfos.com" };
+            PasswordValidator passwordValidator = new PasswordValidator(6);
+            EmailValidator emailValidator = new EmailValidator();
+            Console.WriteLine("Passwords: ");
+            foreach(string password in passwords)
             {
-                flashSale.Add(new DiscountedItem(rentable, 25));
+                Console.WriteLine(passwordValidator.IsValidPassword(password));
             }
-            RentingConsolePrinter printer = new RentingConsolePrinter();
-            printer.DisplayItems(flashSale);
-            printer.PrintTotalPrice(flashSale);
+            Console.WriteLine("E-mails: ");
+            foreach (string email in emails)
+            {
+                Console.WriteLine(emailValidator.IsValidAddress(email));
+            }
         }
     }
 }
