@@ -9,6 +9,7 @@ namespace LV5
         private double[] sequence;
         private int sequenceSize;
         private SortStrategy sortStrategy;
+        private ISearchStrategy searchStrategy;
         public NumberSequence(int sequenceSize)
         {
             this.sequenceSize = sequenceSize;
@@ -26,6 +27,11 @@ namespace LV5
         {
             this.sortStrategy = strategy;
         }
+        public void SetSearchStrategy(ISearchStrategy strategy)
+        {
+            this.searchStrategy = strategy;
+        }
+        public void Search(double itemToFind) { this.searchStrategy.Search(this.sequence, itemToFind); }
         public void Sort() { this.sortStrategy.Sort(this.sequence); }
         public override string ToString()
         {
