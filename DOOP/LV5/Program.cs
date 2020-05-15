@@ -7,17 +7,13 @@ namespace LV5
     class Program
     {
         static void Main(string[] args)
-        { //5. zadatak
-           
-            GroupNote groupNote1 = new GroupNote("Grupna poruka 1",new BlueTheme());
-            groupNote1.AddName("Mario");
-            groupNote1.AddName("Ante");
-            groupNote1.AddName("Petar");
-            groupNote1.Show();
-            GroupNote groupNote2 = new GroupNote("Grupna poruka 2", new LightTheme());
-            groupNote2.AddName("Martin");
-            groupNote2.AddName("Marijan");
-            groupNote2.Show();
+        { //6. zadatak
+            double[] array = {5,6,2,8,9,77,51,21,66,75,42,89,21,75,34};
+            NumberSequence numberSequence = new NumberSequence(array);
+            BubbleSort bubbleSort = new BubbleSort();
+            numberSequence.SetSortStrategy(bubbleSort);
+            numberSequence.Sort();
+            Console.WriteLine(numberSequence.ToString());
         }
     }
 }
