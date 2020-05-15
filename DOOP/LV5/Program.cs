@@ -1,17 +1,18 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace LV5
 {
     class Program
     {
         static void Main(string[] args)
-        {
-            Box box= new Box("kutija1");
-            box.Add(new Product("proizvod1", 6.7, 15.2));
-            box.Add(new Product("proizvod2", 15.1, 5.6));
-            box.Add(new Product("proizvod3", 4.2, 7.8));
-            ShippingService shippingService = new ShippingService();
-            Console.WriteLine("Cijena slanja paketa je :"+shippingService.GetShippingPrice(box));
+        { //3. zadatak
+            VirtualProxyDataset virtualProxy = new VirtualProxyDataset(@"C:\Users\tin_k\Documents\DOOP-LV\DOOP\LV5\Test.csv");
+            ProtectionProxyDataset protectionProxy = new ProtectionProxyDataset(User.GenerateUser("korisnik1"));
+            DataConsolePrinter printer = new DataConsolePrinter();
+            printer.PrintInConsole(virtualProxy);
+            printer.PrintInConsole(protectionProxy);              
         }
     }
 }
