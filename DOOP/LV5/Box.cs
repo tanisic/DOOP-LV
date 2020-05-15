@@ -13,6 +13,7 @@ namespace LV5
         {
             this.items = new List<IShipable>();
             this.name = name;
+            this.weight = 0;
         }
         public void Add(IShipable item)
         {
