@@ -4,19 +4,19 @@ using System.Collections.Generic;
 namespace LV6
 {
     class Program
-    { //1. zadatak
+    { //2. zadatak
         static void Main(string[] args)
         {
-            List<Note> notes = new List<Note>();
+            List<Product> products = new List<Product>();
             for(int i=0;i<3;i++)
             {
-                notes.Add(new Note("title", "text"));
+                products.Add(new Product("description",72.05));
             }
-            Notebook notebook = new Notebook(notes);
-            Iterator iterator = (Iterator)notebook.GetIterator();
+            Box box = new Box(products);
+            ProductIterator iterator = (ProductIterator)box.GetIterator();
             while(!iterator.IsDone)
             {
-                iterator.Current.Show();
+                Console.WriteLine(iterator.Current.ToString());
                 iterator.Next();
             }
         }
