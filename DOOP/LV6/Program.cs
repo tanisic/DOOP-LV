@@ -6,18 +6,21 @@ using System.Runtime.CompilerServices;
 namespace LV6
 {
     class Program
-    { //6. zadatak
+    { //8. zadatak
         static void Main(string[] args)
-        {  string toCheck = "Ab0";
-            StringChecker checker = new StringLengthChecker();
-            checker.Check(toCheck);
-            checker.SetNext(new StringLowerCaseChecker());
-            checker.Check(toCheck);
-            checker.SetNext(new StringUpperCaseChecker());
-            checker.Check(toCheck);
-            checker.SetNext(new StringDigitChecker());
-            Console.WriteLine(checker.Check(toCheck));
-
+        {
+            WeatherStation weatherStation = new WeatherStation(27);
+            HomeThermostat thermostat1 = new HomeThermostat();
+            HomeThermostat thermostat2 = new HomeThermostat();
+            weatherStation.AddObserver(thermostat1);
+            weatherStation.AddObserver(thermostat2);
+            weatherStation.SetTemperature(10);
+            weatherStation.SetTemperature(42);
+            weatherStation.SetTemperature(20);
+            weatherStation.RemoveObserver(thermostat2);
+            weatherStation.SetTemperature(10);
+            weatherStation.SetTemperature(42);
+            weatherStation.SetTemperature(20);
         }
     }
 }
