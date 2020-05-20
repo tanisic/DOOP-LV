@@ -4,20 +4,20 @@ using System.Collections.Generic;
 namespace LV6
 {
     class Program
-    { //3. zadatak
+    { //4. zadatak
         static void Main(string[] args)
         {
-            ToDoItem item1 = new ToDoItem("title1", "text1", DateTime.Today);
             CareTaker careTaker = new CareTaker();
-            careTaker.AddMemento(item1.StoreState());
-            item1 = new ToDoItem("title2", "text2", DateTime.Today);
-            careTaker.AddMemento(item1.StoreState());
-            item1 = new ToDoItem("title3","text3",DateTime.Today);
-            careTaker.AddMemento(item1.StoreState());
-            foreach(Memento memento in careTaker.GetMementoList())
+            BankAccount account = new BankAccount("owner1", "adress1", (decimal)50.25);
+            careTaker.AddMemento(account.StoreState());
+             account = new BankAccount("owner2", "adress2", (decimal)51.25);
+            careTaker.AddMemento(account.StoreState());
+            account = new BankAccount("owner3", "adress3", (decimal)55.25);
+            careTaker.AddMemento(account.StoreState());
+            foreach(BankAccountMemento memento in careTaker.GetMementoList())
             {
-                item1.RestoreState(memento);
-                Console.WriteLine(item1.ToString());
+                account.RestoreState(memento);
+                Console.WriteLine(account.ToString());
             }
         }
     }

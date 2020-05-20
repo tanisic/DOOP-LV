@@ -6,20 +6,20 @@ namespace LV6
 {
     class CareTaker
     {
-        public List<Memento> PreviousStates { get; set; }
+        public List<BankAccountMemento> PreviousStates { get; set; }
         public CareTaker()
         {
-            this.PreviousStates = new List<Memento>();
+            this.PreviousStates = new List<BankAccountMemento>();
         }
-        public void AddMemento(Memento memento)
+        public void AddMemento(BankAccountMemento memento)
         {
             PreviousStates.Add(memento);
         }
-        public void RemoveMemento(Memento memento)
+        public void RemoveMemento(BankAccountMemento memento)
         {
             PreviousStates.Remove(memento);
         }
-        public List<Memento> GetMementoList()
+        public List<BankAccountMemento> GetMementoList()
         {
             return this.PreviousStates;
         }
